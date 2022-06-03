@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.country-card{
+  display: flex;
+  padding: 100px 0px 0px 300px;
+  align-items: center;
+  align-content: center;
+
+}
