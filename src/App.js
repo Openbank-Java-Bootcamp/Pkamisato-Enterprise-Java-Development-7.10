@@ -4,24 +4,20 @@ import CountryDetails from "./components/CountryDetails";
 import CountriesList from "./components/CountriesList";
 import NavBar from "./components/Navbar";
 
-
-
 function App() {
-
-
   return (
     <div className="App">
       <NavBar />
-      <Routes>
-        <Route
-          path="/countries"
-          element={<CountriesList/>}
-        />
-        <Route
-          path="/countries/:id"
-          element={<CountryDetails />}
-        />
-      </Routes>
+      <div className="container">
+        <div className="list">
+          <CountriesList />
+        </div>
+        <div className="card">
+          <Routes>
+            <Route path="/:id" element={<CountryDetails />} />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }

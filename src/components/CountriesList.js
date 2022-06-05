@@ -4,7 +4,6 @@ import axios from "axios";
 
 export default function CountriesList(props) {
   const [countries, setCountries] = useState([]);
-  console.log("first", props);
 
   useEffect(() => {
     axios
@@ -13,28 +12,29 @@ export default function CountriesList(props) {
         setCountries(response.data);
       })
       .catch((err) => console.log(err));
-  }, [countries]);
+  }, []);
 
   return (
-    <div>
-      <h1>Countries</h1>
-      {countries.map((country) => {
-        //console.log(country._id)
-        return (
-          <div class="container">
-            <div class="row">
-              <ul class="list-group" key={country._id} className="country">
-                <Link
-                  class="btn btn-outline-primary"
-                  to={`/countries/${country.alpha3Code}`}
-                >
-                  {country.name.official}
-                </Link>
-              </ul>
+    <div className="row">
+      <div className="list-group">
+        {countries.map((country) => {
+          return (
+            <div
+              key={country.alpha3Code}
+              style={{ width: "400px" }}
+              className="list-group-item list-group-item-action"
+            >
+              <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}>
+                <img
+                  src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
+                  alt=""
+                />
+                <h2>{country.name.common}</h2>
+              </Link>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

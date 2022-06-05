@@ -12,10 +12,14 @@ code {
     monospace;
 }
 
-.country-card{
+.container{
   display: flex;
-  padding: 100px 0px 0px 300px;
-  align-items: center;
-  align-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 30px;
+}
 
+.card{
+  padding: 20px;
+  height: fit-content;
 }

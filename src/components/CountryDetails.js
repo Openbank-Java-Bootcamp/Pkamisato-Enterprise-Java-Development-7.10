@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function CountryDetails() {
@@ -18,14 +19,22 @@ export default function CountryDetails() {
   return (
     <div className="col-7">
       {foundCountry && (
-        <div className="country-card">         
+        <div className="country-card">
           <table className="table table-striped">
             <thead>
-            <td><h1> {foundCountry.name.common} </h1></td>
-            <td><img
-            src={` https://flagpedia.net/data/flags/icon/72x54/${foundCountry.alpha2Code.toLowerCase()}.png`}
-            alt="flag"/>
-            </td>
+              <tr>
+                <th>
+                  <h1> {foundCountry.name.common} </h1>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <img
+                    src={` https://flagpedia.net/data/flags/icon/72x54/${foundCountry.alpha2Code.toLowerCase()}.png`}
+                    alt="flag"
+                  />
+                </th>
+              </tr>
             </thead>
             <tbody>
               <tr>
@@ -43,9 +52,19 @@ export default function CountryDetails() {
                 <td>Borders</td>
                 <td>
                   <ul>
-                  {foundCountry.borders.map((country) => {
-                    return <li>{country}</li>;
-                  })}</ul>
+                    {foundCountry.borders.map((alpha3Code) => {
+                      return (
+                        <li>
+                          {" "}
+                          <Link
+                            to={`/${alpha3Code}`}
+                          >
+                            {alpha3Code}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </td>
               </tr>
             </tbody>

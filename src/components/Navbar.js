@@ -1,7 +1,7 @@
 function Navbar() {
   return (
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="/countries">
+    <nav className="navbar navbar-dark bg-dark">
+      <a className="navbar-brand" href="/countries">
         Wiki Countries
       </a>
     </nav>
