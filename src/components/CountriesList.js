@@ -27,7 +27,7 @@ export default function CountriesList(props) {
               <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}>
                 <img
                   src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
-                  alt=""
+                  alt="country flag"
                 />
                 <h2>{country.name.common}</h2>
               </Link>

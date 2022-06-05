@@ -31,7 +31,7 @@ export default function CountryDetails() {
                 <th>
                   <img
                     src={` https://flagpedia.net/data/flags/icon/72x54/${foundCountry.alpha2Code.toLowerCase()}.png`}
-                    alt="flag"
+                    alt="country flag"
                   />
                 </th>
               </tr>
@@ -39,11 +39,11 @@ export default function CountryDetails() {
             <tbody>
               <tr>
                 <td>Capital</td>
-                <td>{foundCountry.capital}</td>
+                <td >{foundCountry.capital}</td>
               </tr>
               <tr>
                 <td>Area</td>
-                <td>
+                <td key={foundCountry.alpha2Code}>
                   {foundCountry.area}
                   <sup>2</sup>
                 </td>
@@ -54,7 +54,7 @@ export default function CountryDetails() {
                   <ul>
                     {foundCountry.borders.map((alpha3Code) => {
                       return (
-                        <li>
+                        <li key={foundCountry.alpha3Code}>
                           {" "}
                           <Link
                             to={`/${alpha3Code}`}

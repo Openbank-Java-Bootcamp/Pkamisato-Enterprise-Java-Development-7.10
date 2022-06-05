@@ -1,9 +1,9 @@
 function Navbar() {
   return (
     <nav className="navbar navbar-dark bg-dark">
-      <a className="navbar-brand" href="/countries">
-        Wiki Countries
-      </a>
+      <div class="container">
+        <h5 className="container-title">Wiki Countries</h5>
+      </div>
     </nav>
   );
 }
